@@ -1,6 +1,8 @@
+from django.conf import settings
 from django.db import models
 from django.contrib.auth.models import User
 class UserDetails(models.Model):
+    profile_pic=models.ImageField(upload_to='profile_pic',default=settings.STATIC_URL +'img/default.jpg')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     date_of_birth = models.DateField(auto_now=False, auto_now_add=False)
     GENDER_CHOICES = [

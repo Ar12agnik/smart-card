@@ -20,7 +20,7 @@ def pwd(request):
             ud=UserDetails.objects.get(user=user)
             dob=ud.date_of_birth
             gender=ud.gender
-            context={'full_name':full_name,'dob':dob,'gender':gender,'user':user}
+            context={'full_name':full_name,'dob':dob,'gender':gender,'user':user,'user_details':ud}
             #print(full_name,dob,gender)
         return render(request,'welcome.html',context)
     except:
