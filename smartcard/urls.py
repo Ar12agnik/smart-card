@@ -22,7 +22,8 @@ from fetch import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index,name='home'),
+    path('', views.load,name='load'),
+    path('home', views.index,name='home'),
     path('uid', views.pwd),
     path('login_view', views.login_view,name='login_view'),
     path('logout_view', views.logout_view,name='logout_view'),

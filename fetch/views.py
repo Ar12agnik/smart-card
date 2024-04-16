@@ -2,6 +2,8 @@ from django.shortcuts import render,HttpResponse,redirect
 from .models import * 
 from django.contrib.auth import authenticate, login, logout
 # Create your views here.
+def load(request):
+    return render(request,'index.html')
 def index(request,message=None):
     if message is not None:
         context={'message':message}
