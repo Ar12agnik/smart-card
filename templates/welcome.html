@@ -57,13 +57,13 @@
               <div class="card">
                 <div class="card-body">
                   <center>
-                    <img src="img/default.jpg" class="img-thumbnail" alt="Profile Picture" width="200" height="200">
+                    <img src="{{ user_details.profile_pic.url }}" class="img-thumbnail" alt="Profile Picture" width="200" height="200">
                   </center>
                   <form action="{% url 'login_view' %}" method="post" class="container py-3 px-3">
                     {% csrf_token %}
                     <div class="text-center">
                       <strong>Welcome {{ full_name }}</strong><br>
-                      <strong>Unique ID:</strong> {{ user.username }}<br>
+                      <strong>Unique ID:</strong> {{ user.username }} <input type="hidden" name="username" value="{{user.username}}"><br>
                       <strong>Name:</strong> {{ full_name }}<br>
                       <strong>Gender:</strong> {{ gender }}
                     </div>
